@@ -76,7 +76,7 @@ process VCF2MAF {
   // TODO: Handle VCF genotype columns per variant caller
   script:
   vep_path  = "/root/miniconda3/envs/vep/bin"
-  vep_forks = task.cpus + 2
+  vep_forks = 4
   basename  = input_vcf.name.replaceAll(/.gz$/, "").replaceAll(/.vcf$/, "")
   """
   if [[ ${input_vcf} == *.gz ]]; then
